@@ -1,0 +1,10 @@
+@baseUrl = http://localhost:5001
+# @baseUrl = https://api.dev.socialappserver.online
+@urlPath = api/v1/user
+
+###
+POST {{baseUrl}}/{{urlPath}}/signup
+Content-Type: application/json
+withCredentials: true
+
+{}

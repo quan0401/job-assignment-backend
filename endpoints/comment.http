@@ -1,0 +1,14 @@
+@baseUrl = http://localhost:5001
+# @baseUrl = https://api.dev.socialappserver.online
+@urlPath = api/v1/comment
+
+###
+POST {{baseUrl}}/{{urlPath}}/
+Content-Type: application/json
+withCredentials: true
+
+{
+  "text": "This is a comment on post 1 comment 2",
+  "photoId": "1",
+  "userId": "1"
+}
