@@ -1,5 +1,7 @@
 # Assignmet
 
+### Live Demo: https://merlin.quankento.art/
+
 ## Overview
 
 This project is a [brief description of the application] built using **Node.js** and containerized with **Docker** for easy deployment. The application is deployed using **AWS** services such as **S3**, **CloudFront**, and **EC2**.
@@ -22,6 +24,34 @@ This project is a [brief description of the application] built using **Node.js**
 - **AWS CloudFront**: Content delivery network (CDN) for distributing content globally with low latency.
 
 ## Backend Structure
+
+```bash
+src
+├── app.ts
+├── config.ts
+├── controllers/          # Handles request logic
+│   ├── comment.ts
+│   ├── photo.ts
+│   └── user.ts
+├── models/               # Database models
+│   ├── comment.model.ts
+│   ├── photo.model.ts
+│   └── user.model.ts
+├── routes/               # API routes
+│   ├── comment.routes.ts
+│   ├── photo.routes.ts
+│   └── user.routes.ts
+├── server.ts             # Server setup
+├── services/             # Business logic services
+│   ├── comment.service.ts
+│   ├── photo.service.ts
+│   └── user.service.ts
+├── setupDatabase.ts      # Database configuration
+└── shared/               # Shared utilities
+    └── helpers/
+        ├── cloudinary-upload.ts
+        └── error-handler.ts
+```
 
 ## Prerequisites
 
