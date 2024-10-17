@@ -1,14 +1,21 @@
 import { Model } from 'sequelize';
-import { faker } from '@faker-js/faker';
 import { IUser, User } from '~/models/user.model';
 
 class UserService {
   public async createUser(data: IUser): Promise<Model<IUser>> {
-    const user = await User.create({
-      ...data,
-      username: data.username || faker.internet.userName()
+    let result: Model<IUser> | null;
+    result = await User.findOne({
+      where: {
+        username: data.username
+      }
     });
-    return user;
+    if (!result) {
+      result = await User.create({
+        ...data,
+        username: data.username
+      });
+    }
+    return result;
   }
 
   public async getUsers(): Promise<Model<IUser>[]> {

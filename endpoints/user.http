@@ -7,4 +7,6 @@ POST {{baseUrl}}/{{urlPath}}/signup
 Content-Type: application/json
 withCredentials: true
 
-{}
+{
+  "username": "quan0401_3"
+}

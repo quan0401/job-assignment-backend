@@ -24,6 +24,9 @@ dist-ssr
 *.sw?
 .npmrc
 
+docker-volumes
+
+
 .env
 .env.production
 .env.development

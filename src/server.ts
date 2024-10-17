@@ -6,8 +6,8 @@ import hpp from 'hpp';
 import cookieSession from 'cookie-session';
 import HTTP_STATUS from 'http-status-codes';
 import { Server } from 'socket.io';
-import { createClient } from 'redis';
-import { createAdapter } from '@socket.io/redis-adapter';
+// import { createClient } from 'redis';
+// import { createAdapter } from '@socket.io/redis-adapter';
 import compression from 'compression';
 import 'express-async-errors';
 import { config } from '~/config';
@@ -28,7 +28,7 @@ export class MyServer {
   public start(): void {
     this.securityMiddleware(this.app);
     this.standardMiddleware(this.app);
-    this.apiMonitoring(this.app);
+    // this.apiMonitoring(this.app);
     this.routeMiddleware(this.app);
     this.globalErrorHandler(this.app);
     this.startServer(this.app);
@@ -40,7 +40,7 @@ export class MyServer {
         name: 'session',
         keys: [config.SECRET_KEY_ONE, config.SECRET_KEY_TWO],
         maxAge: 3600 * 1000,
-        secure: config.NODE_ENV !== 'develop'
+        secure: config.NODE_ENV !== 'development'
       })
     );
     app.use(hpp());
@@ -65,13 +65,13 @@ export class MyServer {
     applicationRoutes(app);
   }
 
-  private apiMonitoring(app: Application): void {
-    // app.use(
-    //   swStats.getMiddleware({
-    //     uriPath: '/api-monitoring'
-    //   })
-    // );
-  }
+  // private apiMonitoring(app: Application): void {
+  //   // app.use(
+  //   //   swStats.getMiddleware({
+  //   //     uriPath: '/api-monitoring'
+  //   //   })
+  //   // );
+  // }
 
   private globalErrorHandler(app: Application): void {
     // Handle unknow routes
@@ -138,3 +138,6 @@ export class MyServer {
     // socketIOChat.listen();
   }
 }
+// docker cp assignment-postgres:/database.sql ./database.sql
+//
+// docker exec -i mysql_banking psql -U assignment -p 5432 -d assignment < database.sql

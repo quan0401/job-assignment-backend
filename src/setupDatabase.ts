@@ -1,7 +1,6 @@
 import { Sequelize } from 'sequelize';
 import Logger from 'bunyan';
 import { config } from '~/config';
-import { createASSOCIATIONS } from './models/associations';
 
 const log: Logger = config.createLogger('setupDatabase');
 

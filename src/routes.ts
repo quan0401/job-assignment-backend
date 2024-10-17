@@ -7,6 +7,9 @@ const BASE_URL = '/api/v1';
 
 export default (app: Application) => {
   const routes = () => {
+    app.get('/health', (req, res) => {
+      res.send('Server is up and running');
+    });
     app.use(`${BASE_URL}/user`, userRoutes.routes());
     app.use(`${BASE_URL}/photo`, photoRoutes.routes());
     app.use(`${BASE_URL}/comment`, commentRoutes.routes());

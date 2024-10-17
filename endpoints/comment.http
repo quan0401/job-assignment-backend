@@ -8,7 +8,7 @@ Content-Type: application/json
 withCredentials: true
 
 {
-  "text": "This is a comment on post 1 comment 2",
+  "text": "This is a comment on post 1 comment 4",
   "photoId": "1",
   "userId": "1"
 }

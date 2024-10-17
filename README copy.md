@@ -23,12 +23,40 @@ This project is a [brief description of the application] built using **Node.js**
 
 ## Backend Structure
 
+```bash
+src
+├── app.ts
+├── config.ts
+├── controllers/          # Handles request logic
+│   ├── comment.ts
+│   ├── photo.ts
+│   └── user.ts
+├── models/               # Database models
+│   ├── comment.model.ts
+│   ├── photo.model.ts
+│   └── user.model.ts
+├── routes/               # API routes
+│   ├── comment.routes.ts
+│   ├── photo.routes.ts
+│   └── user.routes.ts
+├── server.ts             # Server setup
+├── services/             # Business logic services
+│   ├── comment.service.ts
+│   ├── photo.service.ts
+│   └── user.service.ts
+├── setupDatabase.ts      # Database configuration
+└── shared/               # Shared utilities
+    └── helpers/
+        ├── cloudinary-upload.ts
+        └── error-handler.ts
+```
+
 ## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
 
 - **Docker** installed on your local machine.
-- **Cloudinary Account**: CLOUD_NAME, API_KEY, API_SECRET
+- **Cloudinary Account**: API_KEY, API_SECRET
 - **Node.js** (version 18.20.4 or above) installed on your machine.
 
 ## Getting Started
@@ -59,31 +87,4 @@ You can run the application locally using Node.js:
 npm run dev
 ```
 
-The backend will be accessible at `http://localhost:5001`.
-
-## Frontend
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/quan0401/job-assignment-frontend
-cd job-assignment-frontend
-```
-
-### 2. Install Dependencies
-
-Install the required Node.js packages:
-
-```bash
-npm install
-```
-
-### 3. Run the Application Locally
-
-You can run the application locally using Node.js:
-
-```bash
-npm run dev
-```
-
-The frontend will be accessible at `http://localhost:3001`.
+The app will be accessible at `http://localhost:5001`.
